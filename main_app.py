@@ -41,14 +41,6 @@ class ProfileMLP(nn.Module):
     def forward(self, x):
         return self.network(x)
 
-# =============================================================================
-# INIZIALIZZAZIONE APP DASH
-# =============================================================================
-
-app = dash.Dash(__name__, external_stylesheets=['/assets/style.css'])
-# Riga CRUCIALE per il deployment:
-server = app.server
-
 
 
 # ==============================================================================
@@ -177,8 +169,7 @@ STYLE_H5 = {
 # LAYOUT DELL'APP DASH
 # ==============================================================================
 
-app = dash.Dash(__name__, suppress_callback_exceptions=True) # Aggiunto suppress_callback_exceptions
-app.title = "Pipe Predictions"
+
 app.layout = html.Div([
     
     # Titolo spostato fuori dalla colonna, centrato
