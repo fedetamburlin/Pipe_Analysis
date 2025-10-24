@@ -4,7 +4,6 @@
 # ESEGUIRE QUESTO SCRIPT PER LANCIARE L'APPLICAZIONE.
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-# Librerie
 import dash
 from dash import dcc, html
 from dash.dependencies import Input, Output
@@ -17,6 +16,12 @@ import torch
 import torch.nn as nn
 import joblib
 import os
+
+# Inizializzazione app Dash (solo UNA volta)
+app = dash.Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=['/assets/style.css'])
+server = app.server
+app.title = "Pipe Predictions"
+
 
 # ==============================================================================
 # DEFINIZIONE CLASSE MLP
