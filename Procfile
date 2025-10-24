@@ -1,2 +1,2 @@
 # Contenuto per Procfile
-web: gunicorn APP_3:server
+web: gunicorn main_app:server
