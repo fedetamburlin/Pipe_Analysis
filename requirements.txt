@@ -1,0 +1,14 @@
+# Contenuto di requirements.txt
+
+# Forza pip a cercare prima nell'indice CPU-only di PyTorch
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Dipendenze (torch sarà scaricato dall'indice CPU)
+torch
+dash
+plotly
+numpy
+scipy
+scikit-learn
+joblib
+gunicorn
