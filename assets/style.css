@@ -1,0 +1,143 @@
+/* Tooltip più piccolo per gli slider */
+.rc-slider-tooltip-inner {
+    font-size: 12px !important;   /* testo più piccolo */
+    padding: 2px 6px !important;  /* padding ridotto */
+}
+
+.rc-slider-tooltip-arrow {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+
+/* ==============================================================================
+ * FOGLIO DI STILE CUSTOM PER DASHBOARD PIPE PREDICTIONS
+ * Salvare questo file in: [cartella_progetto]/assets/custom.css
+ * ============================================================================== */
+
+/* --- 1. Importazione Font e Stili Globali --- */
+
+/* Importazione del font 'Inter' da Google Fonts per un look più moderno */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+body {
+    /* Applica il font importato. 
+       Lo stack di sistema (usato prima in STYLE_MAIN_CONTAINER) è il fallback. */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    
+    /* Colore di sfondo generale (spostato da app.py) */
+    background-color: #e9ecef; 
+    
+    /* Miglioramento rendering testo */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- 2. Override Stili Componenti Dash (dcc.Slider) --- */
+
+/* Stile per la traccia riempita (la parte blu/viola) */
+.rc-slider-track {
+    background-color: #4a5568; /* Un grigio-blu scuro e professionale */
+    height: 6px;
+}
+
+/* Stile per la traccia totale (la parte grigia chiara) */
+.rc-slider-rail {
+    background-color: #cbd5e0; /* Grigio più chiaro */
+    height: 6px;
+}
+
+/* Stile per il cursore (pallino) */
+.rc-slider-handle {
+    border: 2px solid #4a5568; /* Bordo dello stesso colore della traccia */
+    background-color: #ffffff; /* Sfondo bianco */
+    height: 18px;
+    width: 18px;
+    margin-top: -6px; /* Centra verticalmente il cursore sulla traccia da 6px */
+    opacity: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Effetto al passaggio del mouse sul cursore */
+.rc-slider-handle:hover,
+.rc-slider-handle:active,
+.rc-slider-handle:focus {
+    border-color: #2c3e50; /* Colore più scuro al focus */
+    box-shadow: 0 0 0 5px rgba(74, 85, 104, 0.2); /* Effetto "glow" */
+}
+
+/* Stile per i punti delle 'marks' sulla traccia */
+.rc-slider-dot {
+    border: 1px solid #cbd5e0; /* Grigio chiaro, come la traccia 'rail' */
+    background-color: #cbd5e0;
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    margin-bottom: -1px; /* Centra i punti sulla traccia */
+}
+
+/* Stile per i punti attivi (quelli prima del cursore) */
+.rc-slider-dot-active {
+    border-color: #4a5568; /* Colore della traccia attiva */
+    background-color: #4a5568;
+}
+
+/* Stile per le etichette (le 'marks') */
+.rc-slider-mark-text {
+    color: #4a5568; /* Colore testo coordinato */
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+/* --- 3. Stili Tooltip (dcc.Slider) --- */
+/* Stile del box tooltip che appare sopra il cursore */
+.rc-slider-tooltip-inner {
+    background-color: #2c3e50 !important; /* Sfondo scuro (importante per override) */
+    color: white !important;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Stile della freccetta del tooltip */
+.rc-slider-tooltip-arrow {
+    border-top-color: #2c3e50 !important;
+}
+
+/* --- 4. Tipografia Sidebar --- */
+
+/* Stile per le etichette (es. "OUTER DIAMETER (inches)") */
+label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #5a687b; /* Grigio-blu più morbido */
+    text-transform: uppercase; /* Trasforma in maiuscolo per distinguerle */
+    letter-spacing: 0.5px; /* Leggera spaziatura */
+    display: block; /* Assicura che occupi la sua linea */
+    margin-bottom: 8px; /* Spazio prima dello slider */
+}
+
+/* Stile per i titoli dei gruppi (es. "Geometric Parameters") */
+h5 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee; /* Linea divisoria */
+    color: #495057; /* Colore testo scuro ma non nero */
+    font-size: 16px;
+    font-weight: 700; /* Più pesante per i titoli */
+}
+
+/* --- 5. Stile Titolo Principale --- */
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 700;
+}
+
